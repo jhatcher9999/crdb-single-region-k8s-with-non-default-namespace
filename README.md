@@ -134,7 +134,7 @@ with changes to show how to use a non-default namespace.
 
    
 
-5. Check to see if: a) the stateful set was created, the stateful set created pods, and that those pods kicked off their init-containers successfully.
+5. Check to see if: a) the stateful set was created, b) the stateful set created pods, and c) that those pods kicked off their init-containers successfully.
 
    ```bash
    $ kubectl describe statefulset cockroachdb -n non-default-namespace
@@ -324,7 +324,8 @@ with changes to show how to use a non-default namespace.
     $ kubectl port-forward cockroachdb-0 8080 -n non-default-namespace
     ```
 
-    
+    Visit https://localhost:8080 and verify that you can log into your Admin UI (using "roach" and the password created above).
+    If Chrome gives you a message about cert issues, check out this article for a workaround: https://medium.com/@dblazeski/chrome-bypass-net-err-cert-invalid-for-development-daefae43eb12
 
 13. At this point, you can tear down your cluster.
 
